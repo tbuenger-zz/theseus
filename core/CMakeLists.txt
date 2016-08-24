@@ -3,6 +3,10 @@ project("core")
 
 set(SOURCES
     src/formula.cpp
+    src/identifier.cpp
+    src/literal.cpp
+    src/term.cpp
+    src/printer.cpp
 )
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)

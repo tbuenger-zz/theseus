@@ -3,6 +3,8 @@
 
 %code requires {
   #include "core/formula.hpp"
+  #include "core/term.hpp"
+  #include "core/identifier.hpp"
   #include "tptp/problem.hpp"
 
     // utility function to append a list element to a std::vector

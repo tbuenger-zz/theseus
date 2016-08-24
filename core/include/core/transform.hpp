@@ -1,6 +1,7 @@
 #pragma once
 
 #include "core/formula.hpp"
+#include "core/visitor.hpp"
 #include <unordered_set>
 
 
