@@ -1,0 +1,2178 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"T",
+				"TheseusRunner"
+			],
+			[
+				"fof_un",
+				"fof_unary_formula"
+			],
+			[
+				"ARR",
+				"ARROW_BOTH"
+			],
+			[
+				"FOrmu",
+				"FormulaImplication"
+			],
+			[
+				"parse",
+				"parse_formula"
+			],
+			[
+				"status",
+				"statusString"
+			],
+			[
+				"Probl",
+				"ProblemStatus"
+			],
+			[
+				"Pro",
+				"ProblemStatus"
+			],
+			[
+				"def",
+				"Definition"
+			],
+			[
+				"Formu",
+				"FormulaType"
+			],
+			[
+				"can",
+				"candidate"
+			],
+			[
+				"cand",
+				"candidates"
+			],
+			[
+				"Form",
+				"FormulaJunction"
+			],
+			[
+				"Formul",
+				"Formula"
+			],
+			[
+				"simple",
+				"simple_formula"
+			],
+			[
+				"Iden",
+				"Identifier"
+			],
+			[
+				"sym",
+				"symbol"
+			],
+			[
+				"get",
+				"getOrAdd"
+			],
+			[
+				"oper",
+				"operation_formula"
+			],
+			[
+				"T_RI",
+				"T_RIGHT_SQUARE"
+			],
+			[
+				"Fo",
+				"FormulaNegation"
+			],
+			[
+				"Term",
+				"TermDatabase"
+			],
+			[
+				"op",
+				"operation"
+			],
+			[
+				"sub",
+				"substitutions"
+			],
+			[
+				"subst",
+				"substitute"
+			],
+			[
+				"Sym",
+				"SymbolDatabase"
+			],
+			[
+				"re",
+				"release"
+			],
+			[
+				"For",
+				"FormulaOperation"
+			],
+			[
+				"Formula",
+				"FormulaLiteral"
+			],
+			[
+				"meta",
+				"metasections"
+			],
+			[
+				"is",
+				"is_special"
+			],
+			[
+				"writt",
+				"written_reports"
+			],
+			[
+				"coun",
+				"country_id"
+			],
+			[
+				"desc",
+				"descendant"
+			],
+			[
+				"curr",
+				"currentVersion"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"Section",
+				"SectionHistory"
+			],
+			[
+				"Sect",
+				"SectionHistory"
+			],
+			[
+				"Author",
+				"Authorship"
+			],
+			[
+				"loca",
+				"local_table"
+			],
+			[
+				"uploaded",
+				"uploaded_date"
+			],
+			[
+				"sec",
+				"sections"
+			],
+			[
+				"uplo",
+				"uploaded_date"
+			],
+			[
+				"uplod",
+				"uploaded"
+			],
+			[
+				"timest",
+				"timestamp_to_time"
+			],
+			[
+				"join",
+				"joinedload"
+			],
+			[
+				"micr",
+				"microsecond"
+			],
+			[
+				"cur",
+				"currentVersion"
+			],
+			[
+				"revis",
+				"revisions"
+			],
+			[
+				"Sec",
+				"SectionHistory"
+			],
+			[
+				"lanu",
+				"language_id"
+			],
+			[
+				"m",
+				"metasection_id"
+			],
+			[
+				"context",
+				"Context"
+			],
+			[
+				"Pass",
+				"PassManagerBuilder"
+			],
+			[
+				"icon",
+				"iconExceptions"
+			],
+			[
+				"entries",
+				"entriesPerMarket"
+			],
+			[
+				"ent",
+				"entriesPerMarket"
+			],
+			[
+				"Cel",
+				"CellList"
+			],
+			[
+				"inher",
+				"inheritanceResolver"
+			],
+			[
+				"column",
+				"column_descriptors"
+			],
+			[
+				"__column",
+				"__column_descriptors__"
+			],
+			[
+				"load",
+				"load_from_web"
+			],
+			[
+				"stem",
+				"stem_words"
+			],
+			[
+				"frequ",
+				"frequencies"
+			],
+			[
+				"all",
+				"all_sections"
+			],
+			[
+				"impo",
+				"importances"
+			],
+			[
+				"target",
+				"target_section"
+			],
+			[
+				"sect",
+				"section_words"
+			],
+			[
+				"col",
+				"columns"
+			],
+			[
+				"Max",
+				"max_repetition"
+			],
+			[
+				"max",
+				"max_repetition"
+			],
+			[
+				"Col",
+				"Column"
+			],
+			[
+				"Colu",
+				"ColumnFactory"
+			],
+			[
+				"Re",
+				"RepeatedField"
+			],
+			[
+				"make_re",
+				"make_repeated"
+			],
+			[
+				"make",
+				"make_tuple"
+			],
+			[
+				"max_",
+				"max_definition"
+			],
+			[
+				"L",
+				"LevelLimits"
+			],
+			[
+				"encode",
+				"encodeIndexedField"
+			],
+			[
+				"geom",
+				"geometrical_roads"
+			],
+			[
+				"partit",
+				"partition_number"
+			],
+			[
+				"group",
+				"grouped_roads"
+			],
+			[
+				"with",
+				"withinRange"
+			],
+			[
+				"update",
+				"updateHighlight"
+			],
+			[
+				"venv",
+				"venv_dir"
+			],
+			[
+				"uws",
+				"uwsgi_pass"
+			],
+			[
+				"nginx_",
+				"nginx_config"
+			],
+			[
+				"user",
+				"user_name"
+			],
+			[
+				"prod",
+				"production_readonly_id_rsa"
+			],
+			[
+				"front",
+				"frontend_js"
+			],
+			[
+				"ido",
+				"iso_code3"
+			],
+			[
+				"se",
+				"searching"
+			],
+			[
+				"countr",
+				"countryName"
+			],
+			[
+				"reportL",
+				"reportLanguage"
+			],
+			[
+				"repo",
+				"ReportDesks"
+			],
+			[
+				"Repo",
+				"ReportDeskProvider"
+			],
+			[
+				"action",
+				"action-icon-small"
+			],
+			[
+				"ac",
+				"active_desk"
+			],
+			[
+				"auth",
+				"author_id"
+			],
+			[
+				"authors",
+				"authors_written"
+			],
+			[
+				"result_",
+				"result_sections"
+			],
+			[
+				"stick",
+				"sticked"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"background-",
+				"background-color"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"w",
+				"white-space"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"section",
+				"section_parts"
+			],
+			[
+				"report",
+				"reportFullSection"
+			],
+			[
+				"merged",
+				"merged_caption"
+			],
+			[
+				"tran",
+				"translator"
+			],
+			[
+				"order",
+				"order_by"
+			],
+			[
+				"reivs",
+				"revision_by_language"
+			],
+			[
+				"dropdown",
+				"dropdown-toggle"
+			],
+			[
+				"forei",
+				"foreigncode"
+			],
+			[
+				"iso",
+				"iso_code3"
+			],
+			[
+				"en",
+				"english_name"
+			],
+			[
+				"row",
+				"row_type"
+			],
+			[
+				"sel",
+				"seller_sku"
+			],
+			[
+				"Se",
+				"SellerSKU"
+			],
+			[
+				"sku",
+				"sku_id"
+			],
+			[
+				"inven",
+				"inventory_history"
+			],
+			[
+				"new_",
+				"new_inventoryLabels"
+			],
+			[
+				"new",
+				"new_inventoryData"
+			],
+			[
+				"buc",
+				"buckets"
+			],
+			[
+				"ol",
+				"old_supplies"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/tptp/problem.hpp",
+			"settings":
+			{
+				"buffer_size": 1757,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/tptp/parser.ypp",
+			"settings":
+			{
+				"buffer_size": 7774,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/transform.hpp",
+			"settings":
+			{
+				"buffer_size": 1343,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/tptp/parser.hxx",
+			"settings":
+			{
+				"buffer_size": 23110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/tptp/scanner.lpp",
+			"settings":
+			{
+				"buffer_size": 2655,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/core/formula.hpp",
+			"settings":
+			{
+				"buffer_size": 14836,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CmakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "# @author  Barthélémy von Haller"
+			}
+		},
+		{
+			"file": "ext/CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 601,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 6 files for \"Common\" (case sensitive)\n\n/Users/tbuenger/theorem/CMakeLists.txt:\n   16  set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})\n   17  \n   18: include(Common)\n   19  \n   20  add_subdirectory(ext)\n\n/Users/tbuenger/theorem/CmakeLists.txt:\n   16  set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})\n   17  \n   18: include(Common)\n   19  \n   20  add_subdirectory(ext)\n\n2 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 434,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "makefile",
+			"settings":
+			{
+				"buffer_size": 462,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/tptp/driver.cpp",
+			"settings":
+			{
+				"buffer_size": 2015,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main.cpp",
+			"settings":
+			{
+				"buffer_size": 1139,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/tptp/driver.hpp",
+			"settings":
+			{
+				"buffer_size": 982,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/cpp11.sublime-build",
+					""
+				],
+				[
+					"Packages/User/cpp11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 169.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inden",
+				"Auto indent"
+			],
+			[
+				"txt",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"indenx",
+				"Indent XML"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"git log",
+				"Git: Log Current File"
+			],
+			[
+				"git synt",
+				"Git (SideBarGit): Log: summary of changes last 30"
+			],
+			[
+				"git dif",
+				"Git: Diff All Files"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"markdown",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"indent",
+				"Indent XML"
+			],
+			[
+				"unden",
+				"Auto indent"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 493.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/tbuenger/theorem",
+		"/Users/tbuenger/theorem/ext",
+		"/Users/tbuenger/theorem/src",
+		"/Users/tbuenger/theorem/src/core"
+	],
+	"file_history":
+	[
+		"/Users/tbuenger/theorem/src/tptp/../../main.cpp",
+		"/Users/tbuenger/theorem/CmakeLists.txt",
+		"/Users/tbuenger/theorem/src/tptp/parser.ypp2",
+		"/Users/tbuenger/theorem/parser.cxx",
+		"/Users/tbuenger/theorem/src/transform.hpp",
+		"/Users/tbuenger/theorem/src/prover.cpp",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory",
+		"/Users/tbuenger/theorem/parser.hxx",
+		"/Users/tbuenger/theorem/parser.ypp",
+		"/Users/tbuenger/theorem/src/tptp/parser.output",
+		"/Users/tbuenger/theorem/src/tptp/makefile",
+		"/Users/tbuenger/theorem/scanner.cxx",
+		"/Users/tbuenger/theorem/makefile",
+		"/Users/tbuenger/theorem/src/tptp/driver.cpp",
+		"/Users/tbuenger/theorem/src/tptp/scanner.lpp",
+		"/Users/tbuenger/theorem/src/tptp/driver.hpp",
+		"/Users/tbuenger/theorem/src/tptp/scanner.hpp",
+		"/Users/tbuenger/theorem/src/tptp/parser.hxx",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits",
+		"/Users/tbuenger/theorem/src/makefile",
+		"/Users/tbuenger/theorem/src/tptp/parser.hpp",
+		"/Users/tbuenger/theorem/src/tptp/parser.ypp",
+		"/Users/tbuenger/theorem/prover.cpp",
+		"/Users/tbuenger/theorem/formula.h",
+		"/Users/tbuenger/theorem/calc.y",
+		"/Users/tbuenger/theorem/flex/makefile",
+		"/Users/tbuenger/theorem/scanner.l",
+		"/Users/tbuenger/theorem/ast.hpp",
+		"/Users/tbuenger/theorem/parser.y",
+		"/Users/tbuenger/theorem/tptp.l",
+		"/Users/tbuenger/theorem/tptp.y",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/FlexLexer.h",
+		"/Users/tbuenger/theorem/scanner.hpp",
+		"/Users/tbuenger/theorem/flex/scanner.h",
+		"/Users/tbuenger/theorem/scanner.hxx",
+		"/Users/tbuenger/theorem/parser.output",
+		"/Users/tbuenger/theorem/calc.l",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector",
+		"/Users/tbuenger/theorem/flex/scanner.ll",
+		"/Users/tbuenger/theorem/flex/parser.yy",
+		"/Users/tbuenger/theorem/tptp.hpp",
+		"/Users/tbuenger/theorem/prover",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/js/shared-app.js",
+		"/Users/tbuenger/mpi/vilatest/app/models/metasection.py",
+		"/Users/tbuenger/mpi/vilatest/app/models/section.py",
+		"/Users/tbuenger/mpi/vilatest/app/rest/__init__.py",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/js/vi-report-service.js",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/js/vi-report.js",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/templates/vi-public-author-list.html",
+		"/Users/tbuenger/mpi/vilatest/app/models/author.py",
+		"/Users/tbuenger/mpi/vilatest/fabfile.py",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/js/vi-report-markdown.js",
+		"/Users/tbuenger/mpi/vilatest/app/history_meta.py",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/templates/vi-cms-page.html",
+		"/Users/tbuenger/mpi/vilatest/app/models/authorship.py",
+		"/Users/tbuenger/mpi/vilatest/app/editorial/__init__.py",
+		"/Users/tbuenger/mpi/vilatest/app/models/revision.py",
+		"/Users/tbuenger/mpi/vilatest/app/models/__init__.py",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/templates/vi-cms.html",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/templates/vi-about.html",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/templates/vi-directory.html",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/css/modal.styl",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/css/report.styl",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/js/vi-upload-controller.js",
+		"/Users/tbuenger/mpi/vilatest/provisioning/playbook.yml",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/js/vi-author-list-controller.js",
+		"/Users/tbuenger/mpi/vilatest/app/models/altertables.sql",
+		"/Users/tbuenger/mpi/vilatest/requirements.txt",
+		"/Users/tbuenger/mpi/vilatest/app/api.py",
+		"/Users/tbuenger/mpi/vilatest/app/models/sectionrevision.py",
+		"/Users/tbuenger/mpi/vilatest/alembic/env.py",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/templates/vi-upload.html",
+		"/Users/tbuenger/mpi/vilatest/runtest.sh",
+		"/Users/tbuenger/mpi/vilatest/test/e2e/basic.js",
+		"/Users/tbuenger/mpi/vilatest/app/static/1.1.7/css/flags.styl",
+		"/Users/tbuenger/mpi/vilatest/target/protractor.out",
+		"/Users/tbuenger/mpi/vilatest/test/protractor.conf.js",
+		"/Users/tbuenger/Downloads/docker-protractor-master/Dockerfile",
+		"/Users/tbuenger/tristan/scratchpad.cpp",
+		"/Users/tbuenger/tristan/main3.cpp",
+		"/Users/tbuenger/tristan/hello.bc",
+		"/Users/tbuenger/tristan/hello.o",
+		"/Users/tbuenger/tristan/hello.cpp",
+		"/Users/tbuenger/tristan/hello.py",
+		"/Users/tbuenger/tristan/Clang API examples/Makefile",
+		"/Users/tbuenger/tristan/Makefile",
+		"/Users/tbuenger/tristan/clang+llvm-3.8.0-x86_64-apple-darwin/include/clang/Basic/LangOptions.h",
+		"/Users/tbuenger/Desktop/deep learning deep image readme.txt",
+		"/Users/tbuenger/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/tbuenger/tristan/clang+llvm-3.8.0-x86_64-apple-darwin/include/clang/Basic/LangOptions.def",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config",
+		"/Users/tbuenger/tristan/clang+llvm-3.8.0-x86_64-apple-darwin/include/clang/Frontend/TextDiagnosticPrinter.h",
+		"/Users/tbuenger/tristan/README.TXT",
+		"/Users/tbuenger/tristan/llvm-3.8.0.src/tools/opt/opt.cpp",
+		"/Users/tbuenger/tristan/clang+llvm-3.8.0-x86_64-apple-darwin/include/llvm/Analysis/TargetTransformInfo.h",
+		"/Users/tbuenger/tristan/tristan.sublime-project",
+		"/Users/tbuenger/here/nds_compiler/poi/etc/resource/poi_type_ids.xml",
+		"/Users/tbuenger/plan.py",
+		"/Users/tbuenger/here/groupcats/poi_types/AU/ER/eu/POIType.xml",
+		"/Users/tbuenger/Downloads/email_signature.html",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/xmlwriter.py",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/schema.py",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/masterlist_parser.py",
+		"/Users/tbuenger/here/NDSHA-1140/truffles/poi_types/AU/ER/eu/POIType.xml",
+		"/Users/tbuenger/here/POIType.xml",
+		"/Users/tbuenger/here/groupcats/poi_types_speech/AU/ER/eu/POIType.xml",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/AU/pds_category_usage.txt",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/masterlist.py",
+		"/Users/tbuenger/here/groupcats/poi_types/PO/ER/eu/POIType.xml",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/metatypes.py",
+		"/Users/tbuenger/here/nds_compiler/configuration/util/poi-masterlist/pdsusage.py",
+		"/Users/tbuenger/here/nds_compiler/poi/java/src/com/navteq/psf/poi/LoadPOICategoryConfigTask.java",
+		"/Users/tbuenger/consoleText",
+		"/Users/tbuenger/mpi/viadhoc/config",
+		"/Users/tbuenger/mpi/viadhoc/vi-adhoc/Vagrantfile",
+		"/Users/tbuenger/mpi/viadhoc/test.txt",
+		"/Users/tbuenger/mpi/vi/loadMetaSections.py",
+		"/Users/tbuenger/mpi/vi/fixtures/loadMetaSections.py",
+		"/Users/tbuenger/mpi/vi/Vagrantfile",
+		"/Users/tbuenger/mtf/lib/test.py",
+		"/Users/tbuenger/mtf/lib/external/nds/src/java/nds/poi/optattr/PoiAttribute.java",
+		"/Users/tbuenger/mtf/lib/external/nds/src/java/nds/poi/optattr/PoiAttributeList.java",
+		"/Users/tbuenger/mtf/lib/external/nds/src/cpp/nds/poi/optattr/PoiAttribute.cpp",
+		"/Users/tbuenger/Desktop/outline_erster_teil.txt",
+		"/Users/tbuenger/mpi/treesearch.py",
+		"/Users/tbuenger/tristan/typename.h",
+		"/Users/tbuenger/tristan/main.cpp",
+		"/Users/tbuenger/tristan/foreach.h"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"*.txt",
+			"*.*",
+			"*.html",
+			"*.*",
+			"*.js",
+			"*.py",
+			"*.styl",
+			"*.html",
+			"*.js",
+			"*.html",
+			"*.js",
+			"*.html",
+			"*.js",
+			"*.py",
+			"*.js",
+			"*.html",
+			"*.yml",
+			"*.js",
+			"*.py",
+			"*.js",
+			"*.py",
+			"*.h",
+			"*.cpp",
+			"*.py",
+			"*.java",
+			"*.py",
+			"*.py, *.yml, Vagrantfile",
+			"*.py, *.yml",
+			"*.py",
+			"*.*",
+			"*.+",
+			"*.csv, *.xml",
+			"*.xsc",
+			"*.xml",
+			"*.*",
+			"*.sql",
+			"*.ds",
+			"*.*",
+			"*.py",
+			"*.js",
+			"*.*",
+			"*.yml",
+			"app/*.py",
+			"*.py",
+			"*.yml",
+			"*.*",
+			"*.styl",
+			"*.*",
+			"*.styl",
+			"*.html, *.js, *.styl",
+			"*.js",
+			"*.html, *.js, *.styl",
+			"*.*",
+			"*.html, *.js, *.styl",
+			"*.py",
+			"*.html, *.js, *.styl",
+			"*.html",
+			"*.styl",
+			"*.js",
+			"*.styl",
+			"0.0.4/*.css",
+			"0.0.4/*.styl",
+			"0.0.4/*.*",
+			"0.0.4/*.js",
+			"*.js",
+			"*.*",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.js,*html",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.js,*html,*.styl",
+			"/Users/tbuenger/mpi/vi/app/,*.py, *.html, *.js, *.styl",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.styl",
+			"/Users/tbuenger/mpi/vi/app/,*.py, *.html, *.js, *.styl",
+			"/Users/tbuenger/mpi/vi/app/,*.py, *.html, *.js",
+			"/Users/tbuenger/mpi/vi/app/,*.py",
+			"/Users/tbuenger/mpi/vi/app/,*.py, *.html, *.js",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.py, *.html, *.js",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.py, *.html",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.py, *.html, *.js",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.py, *.html, *.styl",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.py, *.html",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.py, *.js",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/,*.styl",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/",
+			"/Users/tbuenger/mpi/vi/app/static/0.0.3/css",
+			"*.py",
+			"0.0.3/*.html, 0.0.3/*.js, 0.0.3/*.styl, *.py",
+			"0.0.3/*.styl",
+			"0.0.3/*.html, 0.0.3/*.js, 0.0.3/*.styl, *.py",
+			"0.0.3/*.styl",
+			"0.0.3/*.html, 0.0.3/*.js, 0.0.3/*.styl, *.py",
+			"0.0.3/*.html, 0.0.3/*.js, 0.0.3/*.style, *.py",
+			"0.0.3/*.html, 0.0.3/*.js, 0.0.3/*.style",
+			"app/0.0.3/*.html, app/0.0.3/*.js, app/0.0.3/*.style",
+			"app/0.0.3/*.js",
+			"app/*.styl",
+			"app/*.py",
+			"app/*.styl",
+			"app/*.js",
+			"app/*.styl",
+			"app/*.html",
+			"app/*.js",
+			"app/*.py",
+			"*.py",
+			"*.styl",
+			"*.js",
+			"*.styl",
+			"*.py",
+			"*.js",
+			"*.styl",
+			"*.*",
+			"*0.1/*.js",
+			"*0.1/*.styl",
+			"*0.1/*.html",
+			"*0.1/*.hml",
+			"*0.1/*.js",
+			"*0.1/*.html",
+			"*0.1/*.js",
+			"*0.1/*.styl",
+			"*0.1/*.js",
+			"0.1/*.js",
+			"*.js",
+			"*.*",
+			"0.0.1/*.*",
+			"0.0.1/*.js",
+			"0.0.1/*.styl",
+			"*.*",
+			"*.py, static/*/templates/*.html, static/*/js/*.js, static/*/css/*.styl",
+			"*.py, static/*/templates/*.html, static/*/js/v*.js, static/*/css/*.styl",
+			"*.py, static/*/templates/*.html, static/*/js/vi-*.js, static/*/css/*.styl"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Common",
+			"Junction",
+			"Juncion",
+			"FormulaVisitor v",
+			"v->after",
+			"->before",
+			"FormulaVisitor*",
+			"FormulaVisitor* v",
+			"Quantif",
+			"Implica",
+			"%type <theseus::Quantifier> quantifier\nimplication",
+			"implication",
+			"description  : FUNC_LABEL { $$ = std::move($1); }\ndescription  : FUNC_LABEL { $$ = std::move($1); }\nfol_infix_unary",
+			"description  : FUNC_LABEL { $$ = std::move($1); }\nfol_infix_unary",
+			"sequent",
+			" { $$ ",
+			">",
+			"<",
+			"operator",
+			"ARROW",
+			"FormulaQuantifier",
+			"Side",
+			"operation",
+			"problem->",
+			"d.problem",
+			"driver",
+			"bool",
+			", const std::string& sname",
+			"Satisfiable",
+			"true",
+			"base_match",
+			"parse_string",
+			"false",
+			"true",
+			"ProblemType",
+			"Satisfiable",
+			"line",
+			"false",
+			"Problem",
+			"arg",
+			"T",
+			"std::move",
+			"candidate",
+			"shared_ptr",
+			"virtual",
+			"* op);",
+			"FormulaJunction",
+			"return",
+			";",
+			"after",
+			"before",
+			"after(&static_cast<Formula&>(*op));",
+			"before(&static_cast<const Formula&>(*op));",
+			"const Fo",
+			"st<Formula*",
+			"Formula const *",
+			"<const",
+			"const For",
+			"const *",
+			"const>",
+			" const",
+			"* const op)",
+			"on* const",
+			"nullptr",
+			"> o",
+			"Visitor",
+			"stack",
+			"flush",
+			"stream << ",
+			"Formula",
+			"operator",
+			"polarity",
+			"]",
+			"new ",
+			"cout",
+			"std::cout",
+			".variable",
+			"Term with",
+			">&",
+			"created",
+			"Identifier",
+			"pairtolist",
+			"enlist",
+			"pairto",
+			"()",
+			"std::unique_ptr<Term>&",
+			"()",
+			"std::unique_ptr<Term>&",
+			"()",
+			"unique",
+			"::get",
+			"Singleton",
+			"::get()",
+			"make_sh",
+			"*(",
+			"prover",
+			"to_string",
+			"print(",
+			"Formula",
+			"Negation",
+			"Quantifier",
+			"Operation",
+			"ss",
+			"ostream",
+			"idenfitier",
+			"symbol",
+			"SymbolDatabase",
+			"parse",
+			"<string>",
+			"string",
+			"Symbol",
+			"T",
+			"symbols",
+			"Symbol",
+			"symbol",
+			"Symbol",
+			"SymbolDatabase",
+			"src/",
+			"driver",
+			"Example",
+			"example",
+			"Example",
+			"example",
+			"Example",
+			"example",
+			"scanner",
+			"src/tptp/",
+			"lexer"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"std::unique_ptr",
+			"Arial",
+			"xsd:",
+			"ReportDeskProvider",
+			"localizeCountry:translations",
+			"translations.current",
+			"ng-class=\"{darkrow:$even,lightrow:$odd}\"",
+			"    ",
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 9,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/tptp/problem.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								824,
+								824
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 451.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/tptp/parser.ypp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7774,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6899,
+								6899
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Bison/Bison.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3662.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/transform.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								599,
+								599
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/tptp/parser.hxx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/tptp/scanner.lpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1464,
+								1464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 874.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/core/formula.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12803,
+								12803
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 8624.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "CmakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 645,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "test/CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# @author  Barthélémy von Haller",
+							"syntax": "Packages/CMake/CMake.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "ext/CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								258,
+								258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CMake/CMake.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 41.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 434,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										183,
+										189
+									],
+									[
+										363,
+										369
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 462,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/tptp/driver.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2015,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2015,
+								2015
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 871.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/tptp/driver.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 304.0
+	},
+	"output.find_results":
+	{
+		"height": 118.0
+	},
+	"output.git":
+	{
+		"height": 116.0
+	},
+	"pinned_build_system": "Packages/Makefile/Make.sublime-build",
+	"project": "theseus.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"scanner.hxx",
+				"scanner.hxx"
+			],
+			[
+				"app.py",
+				"app/__init__.py"
+			],
+			[
+				"cms",
+				"app/static/1.1.7/js/vi-cms-page-controller.js"
+			],
+			[
+				"reportdeskpro",
+				"app/static/1.1.7/js/vi-report-desk-provider.js"
+			],
+			[
+				"search",
+				"app/static/1.1.7/js/vi-search-controller.js"
+			],
+			[
+				"metase",
+				"app/models/metasection.py"
+			],
+			[
+				"vi-publi",
+				"app/static/1.1.7/templates/vi-public-author-list.html"
+			],
+			[
+				"fab",
+				"fabfile.py"
+			],
+			[
+				"author.",
+				"app/static/1.1.7/templates/vi-public-author-list.html"
+			],
+			[
+				"",
+				"app/static/1.1.7/js/vi-report-markdown.js"
+			],
+			[
+				"author",
+				"app/models/author.py"
+			],
+			[
+				"cms.html",
+				"app/static/1.1.7/templates/vi-cms-page.html"
+			],
+			[
+				"upload.js",
+				"app/static/1.1.7/js/vi-upload-controller.js"
+			],
+			[
+				"vi-uplo",
+				"app/static/1.1.7/templates/vi-upload.html"
+			],
+			[
+				"editoria",
+				"app/editorial/__init__.py"
+			],
+			[
+				"revision",
+				"app/models/revision.py"
+			],
+			[
+				"vireportservice",
+				"app/static/1.1.7/js/vi-report-service.js"
+			],
+			[
+				"authorship",
+				"app/models/authorship.py"
+			],
+			[
+				"section.py",
+				"app/models/section.py"
+			],
+			[
+				"history",
+				"app/history_meta.py"
+			],
+			[
+				"editori",
+				"app/editorial/__init__.py"
+			],
+			[
+				"vi-repo",
+				"app/static/1.1.7/templates/vi-reports.html"
+			],
+			[
+				".yml",
+				"provisioning/playbook.yml"
+			],
+			[
+				"api",
+				"app/api.py"
+			],
+			[
+				"secion",
+				"app/models/section.py"
+			],
+			[
+				"section",
+				"app/models/section.py"
+			],
+			[
+				"upload-",
+				"app/static/1.1.7/js/vi-upload-controller.js"
+			],
+			[
+				"upload",
+				"app/static/1.1.7/templates/vi-upload.html"
+			],
+			[
+				"langoptions",
+				"clang+llvm-3.8.0-x86_64-apple-darwin/include/clang/Basic/LangOptions.def"
+			],
+			[
+				"langopts",
+				"clang+llvm-3.8.0-x86_64-apple-darwin/include/clang/Basic/LangOptions.h"
+			],
+			[
+				"tools/opt/opt.cpp",
+				"llvm-3.8.0.src/tools/opt/opt.cpp"
+			],
+			[
+				"poi_type_",
+				"nds_compiler/poi/etc/resource/poi_type_ids.xml"
+			],
+			[
+				"ds/nds/poi.ds",
+				"nds_compiler/com.navteq.nds.rds_2_4_2/etc/ds/nds/poi/main.ds"
+			],
+			[
+				"predefined.ds",
+				"nds/poi/predefined.ds"
+			],
+			[
+				"schema",
+				"nds_compiler/configuration/util/poi-masterlist/schema.py"
+			],
+			[
+				"masterlist_",
+				"nds_compiler/configuration/util/poi-masterlist/masterlist_parser.py"
+			],
+			[
+				"masterlistp",
+				"nds_compiler/configuration/util/poi-masterlist/masterlist_parser.py"
+			],
+			[
+				"xml",
+				"nds_compiler/configuration/util/poi-masterlist/xmlwriter.py"
+			],
+			[
+				"metaty",
+				"nds_compiler/configuration/util/poi-masterlist/metatypes.py"
+			],
+			[
+				"loadcatconf",
+				"poi/java/src/com/navteq/psf/poi/LoadPOICategoryConfigTask.java"
+			],
+			[
+				"types.xsd",
+				"poi/etc/xml/schema/poi_types.xsd"
+			],
+			[
+				"au/types",
+				"poi/etc/resource/olympia/poi_types/AU/types.xml"
+			],
+			[
+				"truf.xml",
+				"basicnav/etc/xml/PSI_Truffles_Workflow.xml"
+			],
+			[
+				"poicategoryconfig",
+				"poi/java/src/com/navteq/psf/poi/LoadPOICategoryConfigTask.java"
+			],
+			[
+				"permworkflow",
+				"extension/etc/xml/PSFPermIDWorkflow.xml"
+			],
+			[
+				"usagetype",
+				"com.navteq.nds.rds_2_4_2/java/src/nds/icondata/main/UsageTypeMaskValues.java"
+			],
+			[
+				"extension/sql/psf/psfextension/cf_psf_populatepoi.sql",
+				"extension/sql/psf/psfextension/CF_PSF_PopulatePoi.sql"
+			],
+			[
+				"extension/sql/psf/common/common_createtoolspackage.sql",
+				"extension/sql/psf/common/Common_CreateToolsPackage.sql"
+			],
+			[
+				"vi-report",
+				"app/static/1.0.0/js/vi-report.js"
+			],
+			[
+				"vi-reports",
+				"app/static/1.0.0/templates/vi-reports.html"
+			],
+			[
+				"reportdeskprovider",
+				"app/static/1.0.0/js/vi-report-desk-provider.js"
+			],
+			[
+				"reportdeskcontroller",
+				"app/static/1.0.0/js/vi-report-desk-controller.js"
+			],
+			[
+				"front",
+				"app/static/1.0.0/js/frontend-app.js"
+			],
+			[
+				"styls.",
+				"app/static/1.0.0/css/style.styl"
+			],
+			[
+				"shared",
+				"app/static/1.0.0/js/shared-app.js"
+			],
+			[
+				"layout",
+				"templates/layout.html"
+			],
+			[
+				"deskpro",
+				"app/static/0.0.4/js/vi-report-desk-provider.js"
+			],
+			[
+				"report.js",
+				"app/static/0.0.4/js/vi-report.js"
+			],
+			[
+				"report.htm",
+				"app/static/0.0.4/templates/vi-reports.html"
+			],
+			[
+				"nav-html",
+				"app/static/0.0.4/templates/vi-nav-bar.html"
+			],
+			[
+				"outlines",
+				"app/static/0.0.4/js/vi-outline-service.js"
+			],
+			[
+				"report.html",
+				"app/static/0.0.4/templates/vi-reports.html"
+			],
+			[
+				"ountrysr",
+				"app/static/0.0.4/js/vi-country-service.js"
+			],
+			[
+				"reportcontroll",
+				"app/static/0.0.4/js/vi-report-desk-controller.js"
+			],
+			[
+				"report-html",
+				"app/static/0.0.4/templates/vi-report-list.html"
+			],
+			[
+				"search.html",
+				"app/static/0.0.4/templates/vi-search.html"
+			],
+			[
+				"reportdeskpr",
+				"app/static/0.0.4/js/vi-report-desk-provider.js"
+			],
+			[
+				"search.",
+				"app/static/0.0.4/js/vi-search-controller.js"
+			],
+			[
+				"front.st",
+				"app/static/0.0.4/css/front.styl"
+			],
+			[
+				"select.js",
+				"app/static/0.0.4/lib/select.js"
+			],
+			[
+				"selectjs",
+				"app/static/0.0.4/lib/select.js"
+			],
+			[
+				"style.styl",
+				"vi/app/static/0.0.3/css/style.styl"
+			],
+			[
+				"share",
+				"vi/app/static/0.0.3/js/shared-app.js"
+			],
+			[
+				"shar",
+				"vi/app/static/0.0.3/js/shared-app.js"
+			],
+			[
+				"parse",
+				"vi/app/docxparser/parser.py"
+			],
+			[
+				"vi-dire",
+				"vi/app/static/0.0.3/js/vi-directory.js"
+			],
+			[
+				"vi-direc",
+				"vi/app/static/0.0.3/templates/vi-directory.html"
+			],
+			[
+				"upload-c",
+				"vi/app/static/0.0.3/js/vi-upload-controller.js"
+			],
+			[
+				"upohtml",
+				"vi/app/static/0.0.3/templates/vi-upload.html"
+			],
+			[
+				"nav-bar",
+				"vi/app/static/0.0.3/templates/vi-nav-bar.html"
+			],
+			[
+				"cmshtm",
+				"vi/app/static/0.0.3/templates/vi-cms.html"
+			],
+			[
+				"cms-",
+				"vi/app/static/0.0.3/js/vi-cms-page-controller.js"
+			],
+			[
+				"report",
+				"app/static/0.0.3/js/vi-report.js"
+			],
+			[
+				"director",
+				"app/static/0.0.0/js/vi-directory.js"
+			],
+			[
+				"select2",
+				"app/static/0.0.0/lib/select2/select2.css"
+			],
+			[
+				"select2.",
+				"app/static/0.0.0/lib/select2/select2.css"
+			],
+			[
+				"app/editorial/__init__.py",
+				"app/editorial/__init__.py"
+			],
+			[
+				"country-list",
+				"app/static/0.0.0/templates/vi-country-list.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 832.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 264.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

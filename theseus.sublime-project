@@ -1,0 +1,35 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+      "folder_exclude_patterns": ["build", "ext/*/*"]
+		}
+	],
+  "settings":
+  {
+    "tab_size": 4
+  },
+  "build_systems": 
+  [
+    {
+      "name": "Cmake",
+      "shell_cmd": "mkdir build ; cd build && cmake -DBISON_EXECUTABLE:STRING=/opt/local/bin/bison .. && make -j4",
+      "working_dir": "${project_path:${folder}}",
+      "file_regex": "^(..[^:\n]*):([0-9]+):([0-9]+): +(?:error|warning): (.*)$",
+
+      "variants":
+      [
+        { "name": "Clean",
+          "shell_cmd": "rm -rf build",
+          "shell": true
+        },
+
+        { "name": "Test",
+          "shell_cmd": "cd build && make test CTEST_OUTPUT_ON_FAILURE=TRUE",
+          "shell": true
+        },
+      ]
+    }
+  ]
+}
