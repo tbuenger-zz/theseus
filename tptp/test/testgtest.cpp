@@ -9,17 +9,29 @@
 
 using namespace std;
 
-// Tests factorial of 0.
-TEST(FactorialTest, HandlesZeroInput) {
-  EXPECT_EQ(1, 1);
+class StringParser : public ::testing::TestWithParam<const char*> { };
+
+TEST_P(StringParser, ParseFormulaRoundTrip)
+{
+    const string expected = GetParam();
+    const string given = tptp::parseFormula(expected)->toString();
+    EXPECT_EQ(expected, given);
+
+    const std::string filename = GetParam();
 }
 
-
-TEST(TPTPParser, SimpleFormula) {
-    string expected = "(p(a,b) & q(c))";
-    const string result = tptp::parseFormula(expected)->toString();
-    EXPECT_EQ(expected, result);
-}
+INSTANTIATE_TEST_CASE_P(tptp,  StringParser, ::testing::Values(
+    "(p(X))",
+    "(~ p(a,b))",
+    "(p(f(a,b)))",
+    "(p(a,b))",
+    "(p(f(a,b)) & q(g(X),h,f(c,d)))",
+    "(p(a) => p(b))",
+    "(! [X] : p(X))",
+    "(? [X,Y,Z] : p(X,Y,Z))",
+    "(? [X] : p(X) => (q(a) | q(b) | q(f(c))))",
+    "(? [X] : (p(X) => (q(a) & q(b) & q(f(c)))))"
+    ));
 
 vector<string> formulasFromFile(const string& filename)
 {
@@ -63,16 +75,12 @@ string normalizeFormula(string f)
     f.erase(remove(f.begin(), f.end(), '\n'), f.end());
     f.erase(remove(f.begin(), f.end(), '\r'), f.end());
     f.erase(remove(f.begin(), f.end(), '\t'), f.end());
-    /*if (f.front() != '(')
-    {
-        f = "(" +  f + ")";
-    }*/
     return f;
 }
 
-class TPTPParser : public ::testing::TestWithParam<const char*> { };
+class FileParser : public ::testing::TestWithParam<const char*> { };
 
-TEST_P(TPTPParser, ParseFormulas)
+TEST_P(FileParser, ParseProblems)
 {
     const std::string filename = GetParam();
     auto definitions = tptp::Problem::parseFromFile(filename).definitions;
@@ -88,10 +96,8 @@ TEST_P(TPTPParser, ParseFormulas)
     });
 }
 
-INSTANTIATE_TEST_CASE_P(tptp,
-                        TPTPParser,
-                        ::testing::Values(
-                            "/Users/tbuenger/theorem/tptp/test/COM003+1.p",
-                            "/Users/tbuenger/theorem/tptp/test/BOO109+1.p",
-                            "/Users/tbuenger/theorem/tptp/test/CSR031+1.p"
-                            ));
+INSTANTIATE_TEST_CASE_P(tptp, FileParser, ::testing::Values(
+    "/Users/tbuenger/theorem/tptp/test/COM003+1.p",
+    "/Users/tbuenger/theorem/tptp/test/BOO109+1.p",
+    "/Users/tbuenger/theorem/tptp/test/CSR031+1.p"
+    ));
