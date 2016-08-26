@@ -4,10 +4,11 @@
 using namespace std;
 
 
+// hash
 size_t TermHasher::operator()(const unique_ptr<Term>& t) const
 {
     size_t hash = 0;
-    hash_combine(hash, reinterpret_cast<size_t>(&t));
+    hash_combine(hash, reinterpret_cast<size_t>(t->identifier));
     for (Term* child : t->children)
     {
         hash_combine(hash, reinterpret_cast<size_t>(child));
@@ -16,6 +17,7 @@ size_t TermHasher::operator()(const unique_ptr<Term>& t) const
 }
 
 
+// equal
 bool TermHasher::operator()(const unique_ptr<Term>& lhs, const unique_ptr<Term>& rhs ) const
 {
     return lhs->identifier == rhs->identifier
@@ -39,7 +41,7 @@ Term* TermDatabase::get(Identifier* identifier)
 Term* TermDatabase::get(Identifier* identifier, vector<Term*> children)
 {
     auto result = make_unique<Term>(identifier);
-    result->children = children;
+    result->children = move(children);
     return singelize(move(result));
 }
 

@@ -35,7 +35,4 @@ public:
 };
 
 
-inline std::ostream& operator<< (std::ostream& stream, const Identifier& identifier)
-{
-    return stream << identifier.symbol;
-}
+std::ostream& operator<< (std::ostream& stream, const Identifier& identifier);

@@ -44,7 +44,6 @@ class TermDatabase : public Singleton<TermDatabase>
 {
 private:
     std::unordered_set<std::unique_ptr<Term>, TermHasher, TermHasher> known;
-    std::vector<std::unique_ptr<Term>> heap;
 
     Term* singelize(std::unique_ptr<Term> term);
 
