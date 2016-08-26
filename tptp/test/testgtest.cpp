@@ -97,7 +97,7 @@ TEST_P(FileParser, ParseProblems)
 }
 
 INSTANTIATE_TEST_CASE_P(tptp, FileParser, ::testing::Values(
-    "/Users/tbuenger/theorem/tptp/test/COM003+1.p",
-    "/Users/tbuenger/theorem/tptp/test/BOO109+1.p",
-    "/Users/tbuenger/theorem/tptp/test/CSR031+1.p"
+    "./input/COM003+1.p",
+    "./input/BOO109+1.p",
+    "./input/CSR031+1.p"
     ));
