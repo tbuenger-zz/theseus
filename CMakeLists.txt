@@ -25,4 +25,5 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 add_subdirectory(core)
 add_subdirectory(tptp)
+add_subdirectory(unify)
 add_subdirectory(app)
