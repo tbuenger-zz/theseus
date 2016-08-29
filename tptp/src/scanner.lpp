@@ -44,7 +44,7 @@ using token_type = tptp::Parser::token_type;
 
 
 "axiom" {return token::AXIOM;}
-"conjecture" {return token::AXIOM;}
+"conjecture" {return token::CONJECTURE;}
 "fof" {return token::FOF;}
 
 "%".*                                    { /* DO NOTHING */ }
