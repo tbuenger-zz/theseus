@@ -54,4 +54,6 @@ public:
 
     Term* substitute(Term* root, Identifier* needle, Term* replacement);
     Term* substitute(Term* root, Term* needle, Term* replacement);
+
+    void clear() { known.clear(); }
 };

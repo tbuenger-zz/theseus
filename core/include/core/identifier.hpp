@@ -22,16 +22,25 @@ class IdentifierFactory : public Singleton<IdentifierFactory>
 {
 private:
     std::unordered_map<Symbol, std::unique_ptr<Identifier>> identifiers;
-    size_t counter = 0;
+    std::unordered_map<Symbol, size_t> counters;
     const std::string unusedPrefix = "_";
 
     Identifier* getOrAdd(Symbol symbol, bool isVariable);
-    Symbol unusedSymbol();
-    Identifier* invent() { return getOrAdd(unusedSymbol(), false); }
+    Symbol unusedSymbol(Symbol prefix);
+    Identifier* invent(Symbol symbol, bool isVariable);
 
 public:
     Identifier* variable(Symbol symbol) { return getOrAdd(symbol, true); }
     Identifier* function(Symbol symbol) { return getOrAdd(symbol, false); };
+
+
+    Identifier* inventFunction() { return invent("", false); }
+    Identifier* inventFunction(Symbol symbol) { return invent(symbol, false); }
+
+    Identifier* inventVariable() { return invent("", true); }
+    Identifier* inventVariable(Symbol symbol) { return invent(symbol, true); }
+
+    void clear() { identifiers.clear(); counters.clear(); }
 };
 
 

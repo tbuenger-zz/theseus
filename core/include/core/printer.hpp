@@ -19,13 +19,15 @@ private:
     std::vector<bool> bracketed;
     std::vector<Type> types;
     std::ostream& stream;
+    bool debug;
 
 public:
 
-    FormulaPrinter(std::ostream& stream) :
+    FormulaPrinter(std::ostream& stream, bool debug=false) :
         stream(stream),
         types(1, Type::Undefined),
-        bracketed()
+        bracketed(),
+        debug(debug)
     { }
 
     inline Type type(const FormulaJunction* _) { return Type::Binary; }

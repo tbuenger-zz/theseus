@@ -13,14 +13,19 @@ Identifier* IdentifierFactory::getOrAdd(Symbol symbol, bool isVariable)
     return result.first->second.get();
 }
 
-Symbol IdentifierFactory::unusedSymbol()
+Symbol IdentifierFactory::unusedSymbol(Symbol prefix)
 {
     Symbol symbol;
     do
     {
-        symbol = unusedPrefix + to_string(counter++);
+        symbol = prefix + unusedPrefix + to_string(counters[prefix]++);
     } while(identifiers.find(symbol) != identifiers.end());
     return symbol;
+}
+
+Identifier* IdentifierFactory::invent(Symbol symbol, bool isVariable)
+{
+    return getOrAdd(unusedSymbol(symbol), isVariable);
 }
 
 
