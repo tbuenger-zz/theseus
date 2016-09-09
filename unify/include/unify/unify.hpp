@@ -13,16 +13,16 @@ class NotUnifyableException : public std::logic_error {
     ~NotUnifyableException() throw() { }
 };
 
-class SelfContainmentException : public std::logic_error {
+class SelfContainmentException : public NotUnifyableException {
   public:
-    SelfContainmentException(const std::string& msg) : std::logic_error(msg) { }
-    SelfContainmentException(const char *msg) : std::logic_error(msg) { }
+    SelfContainmentException(const std::string& msg) : NotUnifyableException(msg) { }
+    SelfContainmentException(const char *msg) : NotUnifyableException(msg) { }
     ~SelfContainmentException() throw() { }
 };
 
 class Unifier
 {
-public:
+private:
 
     struct Node
     {
@@ -47,6 +47,8 @@ public:
 
     void unify(Term* a, Term* b);
     void unifyRecursive(Term* a, Term* b);
+
+    friend std::ostream& operator<<(std::ostream& os, const Unifier& u);
 };
 
 std::ostream& operator<<(std::ostream& os, const Unifier& u);

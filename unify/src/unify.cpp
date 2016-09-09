@@ -36,57 +36,6 @@ void Unifier::unify(Term* aInit, Term* bInit)
     validate();
 }
 
-/*
-void Unifier::validate()
-{
-    unordered_set<Term*> visited;
-    unordered_set<Term*> loopVisited;
-    vector<Term*> termsToVisit;
-    bool includesNonVariable;
-
-    for (auto& pair : parents)
-    {
-        Term* term = pair.first;
-        if (visited.find(term) != visited.end())
-        {
-            termsToVisit.clear();
-            termsToVisit.push_back(term);
-            loopVisited.clear();
-            includesNonVariable = false;
-
-            do
-            {
-                term = termsToVisit.back();
-                termsToVisit.pop_back();
-
-                Term* parent = find(term);
-                if (term->identifier->isVariable)
-                {
-                    termsToVisit.push_back(parent);
-                }
-                else
-                {
-                    includesNonVariable = true;
-                    for (Term* child : term->children)
-                    {
-                        termsToVisit.push_back(child);
-                    }
-                } 
-            } while(loopVisited.insert(term).second && termsToVisit.size() > 0);
-
-            if (includesNonVariable)
-            {
-                throw SelfContainmentException("");
-            }
-
-            for (Term* t : loopVisited)
-            {
-                visited.insert(t);
-            }
-        }
-    }
-}
-*/
 void Unifier::validate()
 {
     unordered_map<Term*, unordered_set<Term*>> roots;
@@ -107,7 +56,7 @@ string indentation = "";
 
 void Unifier::validLoop(Term* t, unordered_set<Term*>& visited, bool includesNonVariable)
 {
-    cout << indentation << "> " << *t << endl;
+    // cout << indentation << "> " << *t << endl;
     if (t->identifier->isVariable)
     {
         bool alreadyVisited = !visited.insert(t).second;
@@ -145,10 +94,10 @@ unique_ptr<Term> LOOP = make_unique<Term>(LOOPIdentifier.get());
 
 void Unifier::unifyRecursive(Term* aInit, Term* bInit)
 {
-    cout << "unify " << aInit << " = " << bInit << endl;
+    // cout << "unify " << aInit << " = " << bInit << endl;
     Term* a = find(aInit);
     Term* b = find(bInit);
-    cout << "now " << a << " = " << b << endl;
+    // cout << "now " << a << " = " << b << endl;
 
     if (a == b)
     {
@@ -157,19 +106,19 @@ void Unifier::unifyRecursive(Term* aInit, Term* bInit)
     if (a->identifier->isVariable && b->identifier->isVariable)
     {
         unionTrees(a, b);
-        cout << "after unify:" << endl << *this << endl;
+        // cout << "after unify:" << endl << *this << endl;
         return;
     }
     else if (a->identifier->isVariable)
     {
         parents[a].term = b;
-        cout << "after unify:" << endl << *this << endl;
+        // cout << "after unify:" << endl << *this << endl;
         return;
     }
     else if (b->identifier->isVariable)
     {
         parents[b].term = a;
-        cout << "after unify:" << endl << *this << endl;
+        // cout << "after unify:" << endl << *this << endl;
         return;
     }
     else if (a->identifier == b->identifier && a->children.size() == b->children.size())
@@ -179,7 +128,7 @@ void Unifier::unifyRecursive(Term* aInit, Term* bInit)
 
         mismatch(a->children.begin(), a->children.end(), b->children.begin(), [this](Term* x, Term* y) {
              unifyRecursive(x,y); return true; });
-        cout << "after unify:" << endl << *this << endl;
+        // cout << "after unify:" << endl << *this << endl;
 
         if (aInit != a)
             parents[aInit].term = a;
@@ -224,7 +173,7 @@ Term* Unifier::find(Term* a)
         if (!a->identifier->isVariable)
             return a;
 
-        auto parentNode = parents[a];
+        auto& parentNode = parents[a];
 
         parent = parentNode.term;
         parentDepth = parentNode.depth;

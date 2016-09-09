@@ -207,6 +207,7 @@ atomic_formula : function_term { $$ = std::make_shared<FormulaLiteral>(Literal($
                ;
 
 function_term : functor LEFT arguments RIGHT { $$ = TermDatabase::instance().get($1, $3); }
+              | constant                     { $$ = TermDatabase::instance().get($1); }
               ;
 
 arguments : arguments ',' term  {$$ = enlist($1, std::move($3));}

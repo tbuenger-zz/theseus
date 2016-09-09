@@ -131,7 +131,7 @@ public:
 
     virtual void before(const FormulaQuantifier* op) override
     {
-        if (op->quantifier == Quantifier::Universal)
+        if (op->quantifier == Quantifier::Existential)
         {
             for (auto& v : op->variables)
             {
@@ -145,7 +145,7 @@ public:
         {
             for (auto& v : op->variables)
             {
-                Identifier* f = IdentifierFactory::instance().inventFunction(v->symbol);
+                Identifier* f = IdentifierFactory::instance().inventFunction("c");
                 Term* t = TermDatabase::instance().get(f, context);
                 substitutions[v] = t;
             }
@@ -164,7 +164,7 @@ public:
 
     virtual shared_ptr<Formula> after(const FormulaQuantifier* op) override
     {
-        if (op->quantifier == Quantifier::Universal)
+        if (op->quantifier == Quantifier::Existential)
         {
             for (auto& v : op->variables)
             {
@@ -192,11 +192,13 @@ private:
     vector<unordered_map<const Formula*, const FormulaJunction*>> nested;
     Operation major;
     Operation minor;
+    bool stable;
 public:
 
     NormalFormer(Operation major) :
         major(major),
-        minor((major == Operation::Conjunction) ? Operation::Disjunction : Operation::Conjunction)
+        minor((major == Operation::Conjunction) ? Operation::Disjunction : Operation::Conjunction),
+        stable(true)
     {
         nested.emplace_back();
     }
@@ -245,6 +247,10 @@ public:
                             copied.emplace_back(grandChild);
                             copiedNewChildren.emplace_back(make_shared<FormulaJunction>(minor, copied));
                         }
+                        if (found->second->children.size() > 1)
+                        {
+                            stable = false;
+                        }
                     }
                     newChildren = move(copiedNewChildren);
                 }
@@ -261,6 +267,11 @@ public:
             nested.back()[result.get()] = result.get();
             return result;
         }
+    }
+
+    bool isStable() const
+    {
+        return stable;
     }
 
 };
@@ -343,7 +354,7 @@ shared_ptr<Formula> nonNull(shared_ptr<Formula>&& a, shared_ptr<Formula>&& b)
         return b;
 }
 
-shared_ptr<Formula> normalize(shared_ptr<Formula> f)
+shared_ptr<Formula> normalize(shared_ptr<Formula> f, bool clausal)
 {    
     {
         ImplicationReplacer x;
@@ -360,9 +371,14 @@ shared_ptr<Formula> normalize(shared_ptr<Formula> f)
         f = nonNull(f->accept(x), move(f));
     }
 
+    while (clausal)
     {
-        NormalFormer x(Operation::Conjunction);
-        f = nonNull(f->accept(x), move(f));  
+        NormalFormer x(Operation::Disjunction);
+        f = nonNull(f->accept(x), move(f)); 
+        if (x.isStable())
+        {
+            break;
+        }
     }
 
     {
@@ -371,15 +387,13 @@ shared_ptr<Formula> normalize(shared_ptr<Formula> f)
     }
 
     {
-        f = make_shared<FormulaJunction>(Operation::Conjunction, vector<shared_ptr<Formula>>(1, f)); 
+        f = make_shared<FormulaJunction>(Operation::Disjunction, vector<shared_ptr<Formula>>(1, f)); 
     }
 
     {
         Flattener x;
         f = nonNull(f->accept(x), move(f));   
     }
-
-
 
     return f;
 }

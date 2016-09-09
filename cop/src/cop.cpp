@@ -1,6 +1,18 @@
-#include "unify/unify.hpp"
+#include "cop/cop.hpp"
+#include "cop/normalizer.hpp"
+#include "core/literal.hpp"
+#include "core/visitor.hpp"
 #include "core/identifier.hpp"
+#include "core/term.hpp"
+#include "core/utils.hpp"
+#include "tptp/problem.hpp"
+#include "unify/unify.hpp"
+
+#include "cop/persistent_list.hpp"
+
+
 #include <algorithm>
+#include <unordered_set>
 #include <vector>
 #include <iterator>
 #include <iostream>
@@ -10,244 +22,413 @@ using namespace std;
 
 namespace
 {
-    ostream& operator<<(ostream& os, const Term* t)
+
+class Clause
+{
+public:
+    std::vector<Literal> literals;
+
+    friend std::ostream& operator<< (std::ostream& stream, const Clause& clause);
+};
+
+std::ostream& operator<< (std::ostream& stream, const Clause& clause)
+{
+    return stream << "[" << join(clause.literals, ",") << "]";
+}
+
+class Matrix
+{
+public:
+    std::vector<Clause> clauses;
+
+    friend std::ostream& operator<< (std::ostream& stream, const Matrix& matrix);
+};
+
+std::ostream& operator<< (std::ostream& stream, const Matrix& matrix)
+{
+    return stream << "[" << join(matrix.clauses, ",\n") << "]";
+}
+
+class MatrixConverter : public FormulaVisitor
+{
+public:
+    Matrix matrix;
+    const Formula* root;
+
+    MatrixConverter(const Formula* root) :
+        matrix(),
+        root(root)
     {
-        if (t)
-            os << *t;
-        else
-            os << "nullptr";
-        return os;
+        matrix.clauses.emplace_back();
     }
-}
 
-ostream& operator<<(ostream& os, const Unifier& u)
-{
-    os << "parents:" << endl;
-    for(const auto& p : u.parents)
+    virtual void between(const Formula* op) override
     {
-        os << " - " << p.first << " => " << p.second.term << endl;
-    }
-    return os;
-}
-
-void Unifier::unify(Term* aInit, Term* bInit)
-{
-    unifyRecursive(aInit, bInit);
-    validate();
-}
-
-/*
-void Unifier::validate()
-{
-    unordered_set<Term*> visited;
-    unordered_set<Term*> loopVisited;
-    vector<Term*> termsToVisit;
-    bool includesNonVariable;
-
-    for (auto& pair : parents)
-    {
-        Term* term = pair.first;
-        if (visited.find(term) != visited.end())
+        if (op == root)
         {
-            termsToVisit.clear();
-            termsToVisit.push_back(term);
-            loopVisited.clear();
-            includesNonVariable = false;
+            matrix.clauses.emplace_back();
+        }
+    }
 
-            do
-            {
-                term = termsToVisit.back();
-                termsToVisit.pop_back();
+    virtual void before(const FormulaLiteral* op) override
+    {
+        matrix.clauses.back().literals.emplace_back(op->literal);
+    }
+};
 
-                Term* parent = find(term);
-                if (term->identifier->isVariable)
+Matrix toMatrix(std::shared_ptr<Formula> f)
+{
+
+    f = normalize(f, false);
+    cout << "non clausal: " << endl << *f << endl << endl;
+
+    f = normalize(f);
+
+    cout << *f << endl;
+
+    MatrixConverter mc(f.get());
+    f->accept(mc);
+    return mc.matrix;
+}
+
+
+void listVariables(const Term* term, unordered_set<Symbol>& identifiers)
+{
+    if (term->identifier->isVariable)
+    {
+        identifiers.insert(term->identifier->symbol);
+    }
+    for (const Term* child : term->children)
+    {
+        listVariables(child, identifiers);
+    }
+}
+
+Clause copyClause(const Clause& clause)
+{
+    unordered_set<Symbol> variables;
+    for (auto& literal : clause.literals)
+    {
+        listVariables(literal.term, variables);
+    }
+
+    Clause copy = clause;
+
+    for (auto& symbol : variables)
+    {
+        Identifier* variable = IdentifierFactory::instance().variable(symbol);
+        Identifier* replacementVariable = IdentifierFactory::instance().inventVariable(symbol);
+        Term* replacementTerm = TermDatabase::instance().get(replacementVariable);
+
+        for (auto& literal : copy.literals)
+        {
+            literal.term = TermDatabase::instance().substitute(literal.term, variable, replacementTerm);
+        }
+
+    }
+
+    return copy;
+}
+
+struct Goal
+{
+    Literal literal;
+    PersistentList<Literal> path;
+
+    Goal(Literal literal, PersistentList<Literal> path) :
+        literal(move(literal)),
+        path(move(path))
+    { } 
+
+    Goal(Literal literal) :
+        literal(move(literal)),
+        path()
+    { } 
+};
+
+
+template <typename T>
+ostream& operator<<(ostream& stream, const PersistentList<T>& list)
+{
+    stream << "[";
+    list.forEach([&stream](const T& member){ stream << member << ", "; });
+    stream << "]";
+    return stream;
+}
+
+
+ostream& operator<<(ostream& stream, const Goal& goal)
+{
+    return stream << goal.literal;
+}
+
+struct State
+{
+    PersistentList<Goal> goals;
+    Unifier unifier;
+    PersistentList<Literal> lemmata;
+
+    bool isTheorem(Matrix& m, size_t maxDepth, size_t nesting = 0)
+    {
+        cout << "[" << nesting << "] checking " << goals.size();
+        if (goals.isEmpty())
+        {
+            cout << endl << " DONE!" << endl;
+            return true;
+        }
+        cout << " goals " << goals << " with current goal <" << goals.front().literal << "> and path " << goals.front().path << endl;
+        cout << "[" << nesting << "] lemmata: " << lemmata << endl; 
+
+        const Goal& goal = goals.front();
+        auto remainingGoals = goals.popped_front();
+
+        if (goal.path.size() > maxDepth)
+        {
+            cout << "too long, going back" << endl;
+            return false;
+        }
+
+
+
+        {
+            // enforcing regularity
+            bool done = false;
+            goal.path.forEach([this, &done, &goal](const Literal& pathLiteral){
+
+                if (!done
+                 && pathLiteral.polarity == goal.literal.polarity
+                 && pathLiteral.term->identifier == goal.literal.term->identifier)
                 {
-                    termsToVisit.push_back(parent);
-                }
-                else
-                {
-                    includesNonVariable = true;
-                    for (Term* child : term->children)
+                    Unifier u = unifier;
+                    try
                     {
-                        termsToVisit.push_back(child);
+                        u.unify(pathLiteral.term, goal.literal.term);
+                        cout << "enforcing regularity by removing this subgoal" << endl;
+                        done = true;
+
                     }
-                } 
-            } while(loopVisited.insert(term).second && termsToVisit.size() > 0);
+                    catch (NotUnifyableException)
+                    { }
+                }
+            });
 
-            if (includesNonVariable)
+            if (done)
             {
-                throw SelfContainmentException("");
-            }
-
-            for (Term* t : loopVisited)
-            {
-                visited.insert(t);
+                return false;
             }
         }
-    }
-}
-*/
-void Unifier::validate()
-{
-    unordered_map<Term*, unordered_set<Term*>> roots;
-    for (auto& pair : parents)
-    {
-        roots[find(pair.first)].insert(pair.first);
-    }
-    for (auto& pair : roots)
-    {
-        if (!pair.first->identifier->isVariable)
+
         {
-            validLoop(pair.first, pair.second, false);
+            // check lemmatas
+            bool done = false;
+            lemmata.forEach([this, &done, &goal, &m, &remainingGoals, maxDepth, nesting](const Literal& lemma){
+
+                if (!done
+                 && lemma.polarity == goal.literal.polarity
+                 && lemma.term->identifier == goal.literal.term->identifier)
+                {
+                    Unifier u = unifier;
+                    try
+                    {
+                        u.unify(lemma.term, goal.literal.term);
+
+
+                        State subState;
+                        subState.goals = remainingGoals;
+                        subState.unifier = u;
+                        subState.lemmata = lemmata;
+
+                        cout << "[" << nesting << "] reusing lemma " << lemma << endl;
+                        //cin.get();
+                        if (subState.isTheorem(m, maxDepth, nesting))
+                        {
+                            done = true;
+                        }
+
+                    }
+                    catch (NotUnifyableException)
+                    { }
+                }
+            });
+
+            if (done)
+            {
+                return true;
+            }
+        }
+
+        // check goal-path-conflict
+        {
+            bool done = false;
+
+            auto innerLemmata = lemmata;
+            goal.path.forEach([this, &innerLemmata, &done, &goal, &m, &remainingGoals, maxDepth, nesting](const Literal& pathLiteral){
+
+                innerLemmata = innerLemmata.pushed_front(pathLiteral);
+
+                if (!done
+                 && pathLiteral.polarity != goal.literal.polarity
+                 && pathLiteral.term->identifier == goal.literal.term->identifier)
+                {
+                    Unifier u = unifier;
+                    try
+                    {
+                        u.unify(pathLiteral.term, goal.literal.term);
+
+
+                        State subState;
+                        subState.goals = remainingGoals;
+                        subState.unifier = u;   
+
+                        // add path up to conflict as lemmata
+                        subState.lemmata = innerLemmata;
+
+                        cout << "[" << nesting << "] short circuiting " << goal.literal << " with path member " << pathLiteral << endl;
+                        //cin.get();
+                        if (subState.isTheorem(m, maxDepth, nesting))
+                        {
+                            done = true;
+                        }
+
+                    }
+                    catch (NotUnifyableException)
+                    { }
+                }
+            });
+
+            if (done)
+            {
+                return true;
+            }
+        }
+
+        // extension step
+        for (auto& clause : m.clauses)
+        {
+            Clause nextClause = copyClause(clause);
+            for (auto& literal : nextClause.literals)
+            {
+                if (literal.polarity != goal.literal.polarity
+                 && literal.term->identifier == goal.literal.term->identifier)
+                {
+                    Unifier u = unifier;
+                    try
+                    {
+                        u.unify(literal.term, goal.literal.term);
+
+                        State subState;
+                        subState.goals = remainingGoals;
+
+                        auto extendedPath = goal.path.pushed_front(goal.literal);
+
+                        for (auto& otherLiteral : nextClause.literals) 
+                        {
+                            if (&literal == &otherLiteral)
+                            {
+                                continue;
+                            }
+
+                            Goal subGoal(otherLiteral, extendedPath);
+
+                            subState.goals = subState.goals.pushed_front(subGoal);
+                        }
+
+                        subState.unifier = u;
+                        subState.lemmata = lemmata;
+                        // add full path if nextClause is empty.
+                        if (nextClause.literals.size() == 1)
+                        {
+                            goal.path.forEach([&subState](const Literal& literal){
+                                subState.lemmata = subState.lemmata.pushed_front(literal);
+                            });
+                        }
+                        
+                        cout << "[" << nesting << "] connecting " << goal.literal << " with " << literal << " from clause " << nextClause << endl;
+                        //cin.get();
+                        if (subState.isTheorem(m, maxDepth, nesting+1))
+                        {
+                            return true;
+                        }
+
+                    }
+                    catch (NotUnifyableException)
+                    { }
+                }
+            }
+        }
+
+        return false;
+    }
+};
+
+class Prover
+{
+private:
+    Matrix matrix;
+public:
+    Prover(std::shared_ptr<Formula> f) :
+        matrix(toMatrix(f))
+    { 
+        std::reverse(matrix.clauses.begin(), matrix.clauses.end());
+        cout << matrix << endl;
+        //cin.get();
+    }
+
+    bool isTheorem()
+    {
+        for (size_t maxDepth = 10; ; ++maxDepth)
+        //size_t maxDepth = 10;
+        {
+            cout << "maxDepth: " << maxDepth << endl;
+            for (auto& clause : matrix.clauses)
+            {
+                State s;
+                
+                for (auto& literal : clause.literals)
+                {
+                    s.goals = s.goals.pushed_front(Goal(literal));
+                }
+
+                bool result = s.isTheorem(matrix, maxDepth);
+                if (result)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+};
+
+
+}
+
+bool isTheorem(std::shared_ptr<Formula> f)
+{
+    return Prover(f).isTheorem();
+}
+
+bool isTheorem(tptp::Problem& problem)
+{
+    vector<shared_ptr<Formula>> axioms;
+    shared_ptr<Formula> conjecture;
+
+    for (auto& def : problem.definitions)
+    {
+        if (def.role == tptp::Definition::Role::Axiom)
+        {
+            axioms.emplace_back(def.formula);
+        }
+        else
+        {
+            conjecture = def.formula;
         }
     }
-}
 
-string indentation = "";
+    cout << "AXIOMS: " << axioms.size() << endl;
+    cout << "Conjections: " << ((conjecture) ? 1 : 0) << endl; 
 
-void Unifier::validLoop(Term* t, unordered_set<Term*>& visited, bool includesNonVariable)
-{
-    cout << indentation << "> " << *t << endl;
-    if (t->identifier->isVariable)
-    {
-        bool alreadyVisited = !visited.insert(t).second;
-        if (alreadyVisited && includesNonVariable)
-        {
-            throw SelfContainmentException("Loop including " + t->identifier->symbol);
-        }
-        indentation += " ";
-        Term* parent = find(t);
-        if (t != parent)
-        {
-            validLoop(parent, visited, includesNonVariable);
-        }
-        indentation = indentation.substr(1);
-        if (!alreadyVisited)
-        {
-            visited.erase(t);
-        }
-    }
-    else
-    {
-        for (Term* child : t->children)
-        {
-            indentation += " ";
-            validLoop(child, visited, true);
-            indentation = indentation.substr(1);
-        }
-    }
-}
-
-
-unique_ptr<Identifier> LOOPIdentifier = make_unique<Identifier>("LOOP", false);
-unique_ptr<Term> LOOP = make_unique<Term>(LOOPIdentifier.get());
-
-
-void Unifier::unifyRecursive(Term* aInit, Term* bInit)
-{
-    cout << "unify " << aInit << " = " << bInit << endl;
-    Term* a = find(aInit);
-    Term* b = find(bInit);
-    cout << "now " << a << " = " << b << endl;
-
-    if (a == b)
-    {
-        return;
-    }
-    if (a->identifier->isVariable && b->identifier->isVariable)
-    {
-        unionTrees(a, b);
-        cout << "after unify:" << endl << *this << endl;
-        return;
-    }
-    else if (a->identifier->isVariable)
-    {
-        parents[a].term = b;
-        cout << "after unify:" << endl << *this << endl;
-        return;
-    }
-    else if (b->identifier->isVariable)
-    {
-        parents[b].term = a;
-        cout << "after unify:" << endl << *this << endl;
-        return;
-    }
-    else if (a->identifier == b->identifier && a->children.size() == b->children.size())
-    {
-        if (aInit != a)
-            parents[aInit].term = LOOP.get();
-
-        mismatch(a->children.begin(), a->children.end(), b->children.begin(), [this](Term* x, Term* y) {
-             unifyRecursive(x,y); return true; });
-        cout << "after unify:" << endl << *this << endl;
-
-        if (aInit != a)
-            parents[aInit].term = a;
-
-        return;
-    }
-    throw NotUnifyableException((ostringstream() << *a << "!=" << *b).str());
-}
-
-
-void Unifier::unionTrees(Term* a, Term* b)
-{
-    Node& aa = parents[a];
-    Node& bb = parents[b];
-    if (aa.depth < bb.depth)
-    {
-        aa.term = b;
-    }
-    else if (aa.depth > bb.depth)
-    {
-        bb.term = a;
-    }
-    else
-    {
-        aa.term = b;
-        ++bb.depth;
-    }
-}
-
-
-Term* Unifier::find(Term* a)
-{
-    // without path compression
-    Term* parent = a;
-    size_t aDepth = 0;
-    size_t parentDepth = 0;
-    do
-    {
-        aDepth = parentDepth;
-        a = parent;
-
-        if (!a->identifier->isVariable)
-            return a;
-
-        auto parentNode = parents[a];
-
-        parent = parentNode.term;
-        parentDepth = parentNode.depth;
-        //cout << "find: " << a << "[" << aDepth << "]" << " -> " << parent << "[" << parentDepth << "]" << endl;
-
-    } while (parent != nullptr);
-    return a;
-}
-
-
-Term* Unifier::resolve(Identifier* i)
-{
-    return resolve(TermDatabase::instance().get(i));
-}
-
-Term* Unifier::resolve(Term* t)
-{
-    t = find(t);
-    if (t->identifier->isVariable)
-    {
-        return t;
-    }
-    vector<Term*> newChildren(t->children.size());
-    transform(t->children.begin(), t->children.end(), newChildren.begin(), [this](Term* x){ return resolve(x); });
-    return TermDatabase::instance().get(t->identifier, std::move(newChildren));
+    return isTheorem(make_shared<FormulaImplication>(ImplicationDirection::Right, 
+        make_shared<FormulaJunction>(Operation::Conjunction, move(axioms)),
+        move(conjecture)));
 }
